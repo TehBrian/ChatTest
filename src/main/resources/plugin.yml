@@ -1,0 +1,41 @@
+name: ${name}
+version: ${version}
+description: ${description}
+author: ${author}
+website: ${url}
+main: ${mainClass}
+api-version: 1.16
+commands:
+  ct:
+    description: Send a message to yourself.
+    aliases: [chattest]
+    permission: chattest.ctc
+    usage: /<command> <message>
+  cta:
+    description: Send a message to all players.
+    aliases: [chattestall]
+    permission: chattest.cta
+    usage: /<command> <message>
+  ctc:
+    description: Toggle personal color code translation.
+    aliases: [chattestcolor]
+    permission: chattest.ctc
+    usage: /<command>
+  ctr:
+    description: Reload the config.
+    aliases: [chattestreload]
+    permission: chattest.ctr
+    usage: /<command>
+permissions:
+  chattest.ct:
+    description: Permission to use /ct.
+    default: op
+  chattest.cta:
+    description: Permission to use /cta.
+    default: op
+  chattest.ctc:
+    description: Permission to use /ctc.
+    default: op
+  chattest.ctr:
+    description: Permission to use /ctr.
+    default: op

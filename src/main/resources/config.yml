@@ -1,0 +1,22 @@
+# = ChatTest
+# > Made with love by TehBrian. Please leave a review! \<^-^ >/
+#
+# - Spigot Page:
+# > https://www.spigotmc.org/resources/80783/
+#
+# - Suggestions or Support:
+# > https://tehbrian.xyz/discord
+#
+# - Source Code:
+# > https://github.com/ItsTehBrian/ChatTest
+
+# Set to either true or false.
+allow_empty_messages: true
+
+alternate_color_character: '&'
+
+messages:
+  ctc:
+    enabled: "&ePersonal &dcolor &ccode &btranslation &aenabled."
+    disabled: "&7Personal color code translation disabled."
+  ctr: "&aSuccessfully &creloaded &dthe &bconfig!"
