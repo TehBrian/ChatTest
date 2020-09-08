@@ -6,7 +6,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import xyz.tehbrian.chattest.ChatTest;
 import xyz.tehbrian.chattest.user.UserData;
-import xyz.tehbrian.chattest.util.MessageUtils;
 
 import java.util.UUID;
 
@@ -28,9 +27,9 @@ public class ChatTestColorCommand implements CommandExecutor {
         }
 
         if (userData.toggleColorEnabled()) {
-            sender.sendMessage(MessageUtils.getMessage("messages.ctc.enabled"));
+            sender.sendMessage(main.getMessage("messages.ctc.enabled"));
         } else {
-            sender.sendMessage(MessageUtils.getMessage("messages.ctc.disabled"));
+            sender.sendMessage(main.getMessage("messages.ctc.disabled"));
         }
 
         return true;

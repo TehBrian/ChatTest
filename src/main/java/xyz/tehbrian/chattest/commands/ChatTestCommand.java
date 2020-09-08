@@ -36,7 +36,7 @@ public class ChatTestCommand implements CommandExecutor {
         }
 
         if (userData.hasColorEnabled()) {
-            message = MessageUtils.color(message, main.getConfig().getString("alternate_color_character").charAt(0));
+            message = MessageUtils.color(message);
         }
 
         sender.sendMessage(message);
