@@ -8,22 +8,18 @@ api-version: "1.16"
 commands:
   ct:
     description: Send a message to yourself.
-    aliases: [chattest]
     permission: chattest.ctc
     usage: /<command> <message>
   cta:
     description: Send a message to all players.
-    aliases: [chattestall]
     permission: chattest.cta
     usage: /<command> <message>
   ctc:
     description: Toggle personal color code translation.
-    aliases: [chattestcolor]
     permission: chattest.ctc
     usage: /<command>
   ctr:
     description: Reload the config.
-    aliases: [chattestreload]
     permission: chattest.ctr
     usage: /<command>
 permissions:
