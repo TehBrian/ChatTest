@@ -3,11 +3,8 @@ package xyz.tehbrian.chattest.commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import xyz.tehbrian.chattest.ChatTest;
 import xyz.tehbrian.chattest.user.User;
-
-import java.util.UUID;
 
 public class ChatTestColorCommand implements CommandExecutor {
 
@@ -19,12 +16,7 @@ public class ChatTestColorCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
-        final User user;
-        if (sender instanceof Player) {
-            user = this.chatTest.getUserManager().getUser((Player) sender);
-        } else {
-            user = this.chatTest.getUserManager().getUser(new UUID(0, 0));
-        }
+        final User user = this.chatTest.getUserManager().getUser(sender);
 
         if (user.toggleColorEnabled()) {
             sender.sendMessage(this.chatTest.getMessage("messages.ctc.enabled"));
