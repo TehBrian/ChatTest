@@ -20,7 +20,7 @@ public class ChatTestAllCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
-        if (!main.getConfig().getBoolean("allow_empty_messages")) {
+        if (!this.main.getConfig().getBoolean("allow_empty_messages")) {
             if (args.length == 0) {
                 return false;
             }
@@ -30,9 +30,9 @@ public class ChatTestAllCommand implements CommandExecutor {
 
         final User user;
         if (sender instanceof Player) {
-            user = main.getUserManager().getUser((Player) sender);
+            user = this.main.getUserManager().getUser((Player) sender);
         } else {
-            user = main.getUserManager().getUser(new UUID(0, 0));
+            user = this.main.getUserManager().getUser(new UUID(0, 0));
         }
 
         if (user.hasColorEnabled()) {

@@ -21,15 +21,15 @@ public class ChatTestColorCommand implements CommandExecutor {
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
         final User user;
         if (sender instanceof Player) {
-            user = main.getUserManager().getUser((Player) sender);
+            user = this.main.getUserManager().getUser((Player) sender);
         } else {
-            user = main.getUserManager().getUser(new UUID(0, 0));
+            user = this.main.getUserManager().getUser(new UUID(0, 0));
         }
 
         if (user.toggleColorEnabled()) {
-            sender.sendMessage(main.getMessage("messages.ctc.enabled"));
+            sender.sendMessage(this.main.getMessage("messages.ctc.enabled"));
         } else {
-            sender.sendMessage(main.getMessage("messages.ctc.disabled"));
+            sender.sendMessage(this.main.getMessage("messages.ctc.disabled"));
         }
 
         return true;

@@ -15,8 +15,8 @@ public class ChatTestReloadCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
-        main.reloadConfig();
-        sender.sendMessage(main.getMessage("messages.ctr"));
+        this.main.reloadConfig();
+        sender.sendMessage(this.main.getMessage("messages.ctr"));
 
         return true;
     }

@@ -17,8 +17,8 @@ public final class ChatTest extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        setupConfig();
-        setupCommands();
+        this.setupConfig();
+        this.setupCommands();
     }
 
     private void setupConfig() {
@@ -40,10 +40,10 @@ public final class ChatTest extends JavaPlugin {
     }
 
     public UserManager getUserManager() {
-        if (userManager == null) {
-            userManager = new UserManager();
+        if (this.userManager == null) {
+            this.userManager = new UserManager();
         }
-        return userManager;
+        return this.userManager;
     }
 
     public String getMessage(final String configKey) {

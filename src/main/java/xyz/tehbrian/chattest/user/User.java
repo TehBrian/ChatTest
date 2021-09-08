@@ -14,25 +14,25 @@ public class User {
     public User(final UUID uuid) {
         this.uuid = uuid;
 
-        if (getPlayer() != null && getPlayer().hasPermission("chattest.ctc")) {
-            colorEnabled = true;
+        if (getPlayer() != null && this.getPlayer().hasPermission("chattest.ctc")) {
+            this.colorEnabled = true;
         }
 
         if (this.uuid.equals(new UUID(0, 0))) {
-            colorEnabled = true;
+            this.colorEnabled = true;
         }
     }
 
     public UUID getUuid() {
-        return uuid;
+        return this.uuid;
     }
 
     public Player getPlayer() {
-        return Bukkit.getPlayer(uuid);
+        return Bukkit.getPlayer(this.uuid);
     }
 
     public boolean hasColorEnabled() {
-        return colorEnabled;
+        return this.colorEnabled;
     }
 
     public void setColorEnabled(final boolean colorEnabled) {
@@ -40,8 +40,8 @@ public class User {
     }
 
     public boolean toggleColorEnabled() {
-        setColorEnabled(!hasColorEnabled());
-        return hasColorEnabled();
+        this.setColorEnabled(!this.hasColorEnabled());
+        return this.hasColorEnabled();
     }
 
 }

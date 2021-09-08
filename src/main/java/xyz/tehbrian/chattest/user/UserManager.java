@@ -11,16 +11,16 @@ public class UserManager {
     private final Map<UUID, User> userMap = new HashMap<>();
 
     public User getUser(final UUID uuid) {
-        userMap.computeIfAbsent(uuid, User::new);
-        return userMap.get(uuid);
+        this.userMap.computeIfAbsent(uuid, User::new);
+        return this.userMap.get(uuid);
     }
 
     public User getUser(final Player player) {
-        return getUser(player.getUniqueId());
+        return this.getUser(player.getUniqueId());
     }
 
     public Map<UUID, User> getUserMap() {
-        return userMap;
+        return this.userMap;
     }
 
 }
