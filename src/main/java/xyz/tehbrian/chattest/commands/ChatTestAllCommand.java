@@ -12,15 +12,15 @@ import java.util.UUID;
 
 public class ChatTestAllCommand implements CommandExecutor {
 
-    private final ChatTest main;
+    private final ChatTest chatTest;
 
-    public ChatTestAllCommand(final ChatTest main) {
-        this.main = main;
+    public ChatTestAllCommand(final ChatTest chatTest) {
+        this.chatTest = chatTest;
     }
 
     @Override
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
-        if (!this.main.getConfig().getBoolean("allow_empty_messages")) {
+        if (!this.chatTest.getConfig().getBoolean("allow_empty_messages")) {
             if (args.length == 0) {
                 return false;
             }
@@ -30,9 +30,9 @@ public class ChatTestAllCommand implements CommandExecutor {
 
         final User user;
         if (sender instanceof Player) {
-            user = this.main.getUserManager().getUser((Player) sender);
+            user = this.chatTest.getUserManager().getUser((Player) sender);
         } else {
-            user = this.main.getUserManager().getUser(new UUID(0, 0));
+            user = this.chatTest.getUserManager().getUser(new UUID(0, 0));
         }
 
         if (user.hasColorEnabled()) {

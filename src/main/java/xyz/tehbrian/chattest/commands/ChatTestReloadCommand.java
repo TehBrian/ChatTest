@@ -7,16 +7,16 @@ import xyz.tehbrian.chattest.ChatTest;
 
 public class ChatTestReloadCommand implements CommandExecutor {
 
-    private final ChatTest main;
+    private final ChatTest chatTest;
 
-    public ChatTestReloadCommand(final ChatTest main) {
-        this.main = main;
+    public ChatTestReloadCommand(final ChatTest chatTest) {
+        this.chatTest = chatTest;
     }
 
     @Override
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
-        this.main.reloadConfig();
-        sender.sendMessage(this.main.getMessage("messages.ctr"));
+        this.chatTest.reloadConfig();
+        sender.sendMessage(this.chatTest.getMessage("messages.ctr"));
 
         return true;
     }

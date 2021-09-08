@@ -11,25 +11,25 @@ import java.util.UUID;
 
 public class ChatTestColorCommand implements CommandExecutor {
 
-    private final ChatTest main;
+    private final ChatTest chatTest;
 
-    public ChatTestColorCommand(final ChatTest main) {
-        this.main = main;
+    public ChatTestColorCommand(final ChatTest chatTest) {
+        this.chatTest = chatTest;
     }
 
     @Override
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
         final User user;
         if (sender instanceof Player) {
-            user = this.main.getUserManager().getUser((Player) sender);
+            user = this.chatTest.getUserManager().getUser((Player) sender);
         } else {
-            user = this.main.getUserManager().getUser(new UUID(0, 0));
+            user = this.chatTest.getUserManager().getUser(new UUID(0, 0));
         }
 
         if (user.toggleColorEnabled()) {
-            sender.sendMessage(this.main.getMessage("messages.ctc.enabled"));
+            sender.sendMessage(this.chatTest.getMessage("messages.ctc.enabled"));
         } else {
-            sender.sendMessage(this.main.getMessage("messages.ctc.disabled"));
+            sender.sendMessage(this.chatTest.getMessage("messages.ctc.disabled"));
         }
 
         return true;
