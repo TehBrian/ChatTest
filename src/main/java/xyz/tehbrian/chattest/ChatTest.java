@@ -6,14 +6,14 @@ import xyz.tehbrian.chattest.commands.ChatTestColorCommand;
 import xyz.tehbrian.chattest.commands.ChatTestCommand;
 import xyz.tehbrian.chattest.commands.ChatTestReloadCommand;
 import xyz.tehbrian.chattest.commands.NoTabComplete;
-import xyz.tehbrian.chattest.user.UserDataManager;
+import xyz.tehbrian.chattest.user.UserManager;
 import xyz.tehbrian.chattest.util.MessageUtils;
 
 import java.util.Objects;
 
 public final class ChatTest extends JavaPlugin {
 
-    private UserDataManager userDataManager;
+    private UserManager userManager;
 
     @Override
     public void onEnable() {
@@ -39,11 +39,11 @@ public final class ChatTest extends JavaPlugin {
         getCommand("ctr").setTabCompleter(new NoTabComplete());
     }
 
-    public UserDataManager getUserDataManager() {
-        if (userDataManager == null) {
-            userDataManager = new UserDataManager();
+    public UserManager getUserManager() {
+        if (userManager == null) {
+            userManager = new UserManager();
         }
-        return userDataManager;
+        return userManager;
     }
 
     public String getMessage(final String configKey) {

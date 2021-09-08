@@ -5,13 +5,13 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-public class UserData {
+public class User {
 
     private final UUID uuid;
 
     private boolean colorEnabled = false;
 
-    public UserData(final UUID uuid) {
+    public User(final UUID uuid) {
         this.uuid = uuid;
 
         if (getPlayer() != null && getPlayer().hasPermission("chattest.ctc")) {
