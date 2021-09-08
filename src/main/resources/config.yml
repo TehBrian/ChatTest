@@ -5,10 +5,10 @@
 # > https://www.spigotmc.org/resources/80783/
 #
 # - Suggestions or Support:
-# > https://tehbrian.xyz/discord
+# > https://chat.tehbrian.xyz
 #
 # - Source Code:
-# > https://github.com/ItsTehBrian/ChatTest
+# > https://github.com/TehBrian/ChatTest
 
 # Set to either true or false.
 allow_empty_messages: true
