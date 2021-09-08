@@ -13,13 +13,13 @@ public class ChatTestColorCommand implements CommandExecutor {
 
     private final ChatTest main;
 
-    public ChatTestColorCommand(ChatTest main) {
+    public ChatTestColorCommand(final ChatTest main) {
         this.main = main;
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        UserData userData;
+    public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
+        final UserData userData;
         if (sender instanceof Player) {
             userData = main.getUserDataManager().getUserData((Player) sender);
         } else {
@@ -34,4 +34,5 @@ public class ChatTestColorCommand implements CommandExecutor {
 
         return true;
     }
+
 }

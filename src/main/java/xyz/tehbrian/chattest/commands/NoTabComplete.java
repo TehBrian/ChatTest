@@ -10,7 +10,8 @@ import java.util.List;
 public class NoTabComplete implements TabCompleter {
 
     @Override
-    public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings) {
+    public List<String> onTabComplete(final CommandSender commandSender, final Command command, final String s, final String[] strings) {
         return new ArrayList<>();
     }
+
 }

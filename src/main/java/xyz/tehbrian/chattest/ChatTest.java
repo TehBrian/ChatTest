@@ -1,7 +1,11 @@
 package xyz.tehbrian.chattest;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.tehbrian.chattest.commands.*;
+import xyz.tehbrian.chattest.commands.ChatTestAllCommand;
+import xyz.tehbrian.chattest.commands.ChatTestColorCommand;
+import xyz.tehbrian.chattest.commands.ChatTestCommand;
+import xyz.tehbrian.chattest.commands.ChatTestReloadCommand;
+import xyz.tehbrian.chattest.commands.NoTabComplete;
 import xyz.tehbrian.chattest.user.UserDataManager;
 import xyz.tehbrian.chattest.util.MessageUtils;
 
@@ -9,18 +13,10 @@ import java.util.Objects;
 
 public final class ChatTest extends JavaPlugin {
 
-    private static ChatTest instance;
-
     private UserDataManager userDataManager;
-
-    public static ChatTest getInstance() {
-        return instance;
-    }
 
     @Override
     public void onEnable() {
-        instance = this;
-
         setupConfig();
         setupCommands();
     }
@@ -50,7 +46,8 @@ public final class ChatTest extends JavaPlugin {
         return userDataManager;
     }
 
-    public String getMessage(String configKey) {
+    public String getMessage(final String configKey) {
         return MessageUtils.color(Objects.requireNonNull(getConfig().getString(configKey)));
     }
+
 }

@@ -14,12 +14,12 @@ public class ChatTestCommand implements CommandExecutor {
 
     private final ChatTest main;
 
-    public ChatTestCommand(ChatTest main) {
+    public ChatTestCommand(final ChatTest main) {
         this.main = main;
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
         if (!main.getConfig().getBoolean("allow_empty_messages")) {
             if (args.length == 0) {
                 return false;
@@ -28,7 +28,7 @@ public class ChatTestCommand implements CommandExecutor {
 
         String message = String.join(" ", args);
 
-        UserData userData;
+        final UserData userData;
         if (sender instanceof Player) {
             userData = main.getUserDataManager().getUserData((Player) sender);
         } else {
@@ -43,4 +43,5 @@ public class ChatTestCommand implements CommandExecutor {
 
         return true;
     }
+
 }

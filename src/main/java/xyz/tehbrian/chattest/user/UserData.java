@@ -35,7 +35,7 @@ public class UserData {
         return colorEnabled;
     }
 
-    public void setColorEnabled(boolean colorEnabled) {
+    public void setColorEnabled(final boolean colorEnabled) {
         this.colorEnabled = colorEnabled;
     }
 
@@ -43,4 +43,5 @@ public class UserData {
         setColorEnabled(!hasColorEnabled());
         return hasColorEnabled();
     }
+
 }

@@ -10,16 +10,17 @@ public class UserDataManager {
 
     private final Map<UUID, UserData> userDataMap = new HashMap<>();
 
-    public UserData getUserData(UUID uuid) {
+    public UserData getUserData(final UUID uuid) {
         userDataMap.computeIfAbsent(uuid, UserData::new);
         return userDataMap.get(uuid);
     }
 
-    public UserData getUserData(Player player) {
+    public UserData getUserData(final Player player) {
         return getUserData(player.getUniqueId());
     }
 
     public Map<UUID, UserData> getUserDataMap() {
         return userDataMap;
     }
+
 }
