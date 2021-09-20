@@ -13,30 +13,36 @@ java {
 
 repositories {
     mavenCentral()
-    maven {
-        name = "spigotmc-repo"
-        url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+    mavenLocal()
+
+    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") {
+        name = "spigotmc"
     }
-    maven {
+    maven("https://oss.sonatype.org/content/groups/public/") {
         name = "sonatype"
-        url = uri("https://oss.sonatype.org/content/groups/public/")
     }
-    maven {
+    maven("https://s01.oss.sonatype.org/content/groups/public/") {
         name = "sonatype-s01"
-        url = uri("https://s01.oss.sonatype.org/content/groups/public/")
     }
 }
 
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT")
+
+    implementation("net.kyori:adventure-platform-bukkit:4.0.0")
+    implementation("net.kyori:adventure-text-serializer-plain:4.9.1")
+
+    implementation("dev.tehbrian:tehlib-paper:0.1.0-SNAPSHOT")
 }
 
-tasks.processResources {
-    filesMatching("plugin.yml") {
-        expand("version" to project.version)
+tasks {
+    processResources {
+        filesMatching("plugin.yml") {
+            expand("version" to project.version)
+        }
     }
-}
 
-tasks.shadowJar {
-    archiveBaseName.set("ChatTest")
+    shadowJar {
+        archiveBaseName.set("ChatTest")
+    }
 }

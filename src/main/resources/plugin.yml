@@ -26,14 +26,14 @@ commands:
     usage: /<command>
 permissions:
   chattest.ct:
-    description: Permission to use /ct.
+    description: Permission to run /ct.
     default: op
   chattest.cta:
-    description: Permission to use /cta.
+    description: Permission to run /cta.
     default: op
   chattest.ctc:
-    description: Permission to use /ctc.
+    description: Permission to run /ctc.
     default: op
   chattest.ctr:
-    description: Permission to use /ctr.
+    description: Permission to run /ctr.
     default: op

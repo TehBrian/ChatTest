@@ -1,19 +1,21 @@
 package xyz.tehbrian.chattest;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import dev.tehbrian.tehlib.paper.TehPlugin;
+import net.kyori.adventure.platform.bukkit.BukkitAudiences;
+import net.kyori.adventure.text.Component;
+import org.checkerframework.checker.nullness.qual.NonNull;
 import xyz.tehbrian.chattest.commands.ChatTestAllCommand;
 import xyz.tehbrian.chattest.commands.ChatTestColorCommand;
 import xyz.tehbrian.chattest.commands.ChatTestCommand;
 import xyz.tehbrian.chattest.commands.ChatTestReloadCommand;
-import xyz.tehbrian.chattest.commands.NoTabComplete;
-import xyz.tehbrian.chattest.user.UserManager;
-import xyz.tehbrian.chattest.util.MessageUtils;
+import xyz.tehbrian.chattest.user.UserService;
 
 import java.util.Objects;
 
-public final class ChatTest extends JavaPlugin {
+public final class ChatTest extends TehPlugin {
 
-    private UserManager userManager;
+    private UserService userService;
+    private BukkitAudiences bukkitAudiences;
 
     @Override
     public void onEnable() {
@@ -26,28 +28,28 @@ public final class ChatTest extends JavaPlugin {
     }
 
     private void setupCommands() {
-        getCommand("ct").setExecutor(new ChatTestCommand(this));
-        getCommand("cta").setExecutor(new ChatTestAllCommand(this));
-        getCommand("ctc").setExecutor(new ChatTestColorCommand(this));
-        getCommand("ctr").setExecutor(new ChatTestReloadCommand(this));
-
-        // I'd like it if instead of player names, Minecraft wouldn't suggest
-        // anything by default, but here we are.
-        getCommand("ct").setTabCompleter(new NoTabComplete());
-        getCommand("cta").setTabCompleter(new NoTabComplete());
-        getCommand("ctc").setTabCompleter(new NoTabComplete());
-        getCommand("ctr").setTabCompleter(new NoTabComplete());
+        this.registerCommand("ct", new ChatTestCommand(this));
+        this.registerCommand("cta", new ChatTestAllCommand(this));
+        this.registerCommand("ctc", new ChatTestColorCommand(this));
+        this.registerCommand("ctr", new ChatTestReloadCommand(this));
     }
 
-    public UserManager getUserManager() {
-        if (this.userManager == null) {
-            this.userManager = new UserManager();
+    public UserService getUserService() {
+        if (this.userService == null) {
+            this.userService = new UserService();
         }
-        return this.userManager;
+        return this.userService;
     }
 
-    public String getMessage(final String configKey) {
-        return MessageUtils.color(Objects.requireNonNull(getConfig().getString(configKey)));
+    public BukkitAudiences getBukkitAudiences() {
+        if (this.bukkitAudiences == null) {
+            this.bukkitAudiences = BukkitAudiences.create(this);
+        }
+        return this.bukkitAudiences;
+    }
+
+    public @NonNull Component getMessage(final String configKey) {
+        return FormatUtil.legacy(Objects.requireNonNull(getConfig().getString(configKey)));
     }
 
 }
