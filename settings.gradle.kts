@@ -1,1 +1,1 @@
-rootProject.name = "chattest"
+rootProject.name = "legacychattest"

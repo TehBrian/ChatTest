@@ -1,4 +1,4 @@
-# = ChatTest
+# = LegacyChatTest
 # > Made with love by TehBrian. Please leave a review! \<^-^ >/
 #
 # - Spigot Page:
@@ -8,7 +8,7 @@
 # > https://chat.tehbrian.xyz
 #
 # - Source Code:
-# > https://github.com/TehBrian/ChatTest
+# > https://github.com/TehBrian/LegacyChatTest
 
 # Set to either true or false.
 allow_empty_messages: true

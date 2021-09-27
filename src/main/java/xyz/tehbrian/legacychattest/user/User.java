@@ -1,4 +1,4 @@
-package xyz.tehbrian.chattest.user;
+package xyz.tehbrian.legacychattest.user;
 
 import dev.tehbrian.tehlib.paper.user.PaperUser;
 import org.bukkit.Bukkit;

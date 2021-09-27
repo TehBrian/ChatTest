@@ -1,18 +1,18 @@
-package xyz.tehbrian.chattest.commands;
+package xyz.tehbrian.legacychattest.commands;
 
 import net.kyori.adventure.audience.Audience;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
-import xyz.tehbrian.chattest.ChatTest;
-import xyz.tehbrian.chattest.user.User;
+import xyz.tehbrian.legacychattest.LegacyChatTest;
+import xyz.tehbrian.legacychattest.user.User;
 
 public class ChatTestColorCommand implements CommandExecutor {
 
-    private final ChatTest chatTest;
+    private final LegacyChatTest chatTest;
 
-    public ChatTestColorCommand(final ChatTest chatTest) {
+    public ChatTestColorCommand(final LegacyChatTest chatTest) {
         this.chatTest = chatTest;
     }
 

@@ -1,4 +1,4 @@
-package xyz.tehbrian.chattest.commands;
+package xyz.tehbrian.legacychattest.commands;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.Command;
@@ -6,15 +6,15 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.jetbrains.annotations.NotNull;
-import xyz.tehbrian.chattest.ChatTest;
-import xyz.tehbrian.chattest.FormatUtil;
-import xyz.tehbrian.chattest.user.User;
+import xyz.tehbrian.legacychattest.LegacyChatTest;
+import xyz.tehbrian.legacychattest.FormatUtil;
+import xyz.tehbrian.legacychattest.user.User;
 
-public class ChatTestCommand implements CommandExecutor {
+public class ChatTestAllCommand implements CommandExecutor {
 
-    private final ChatTest chatTest;
+    private final LegacyChatTest chatTest;
 
-    public ChatTestCommand(final ChatTest chatTest) {
+    public ChatTestAllCommand(final LegacyChatTest chatTest) {
         this.chatTest = chatTest;
     }
 
@@ -42,7 +42,7 @@ public class ChatTestCommand implements CommandExecutor {
             message = FormatUtil.plain(rawMessage);
         }
 
-        this.chatTest.getBukkitAudiences().sender(sender).sendMessage(message);
+        this.chatTest.getBukkitAudiences().all().sendMessage(message);
 
         return true;
     }

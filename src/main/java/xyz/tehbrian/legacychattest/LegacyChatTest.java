@@ -1,18 +1,18 @@
-package xyz.tehbrian.chattest;
+package xyz.tehbrian.legacychattest;
 
 import dev.tehbrian.tehlib.paper.TehPlugin;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import net.kyori.adventure.text.Component;
 import org.checkerframework.checker.nullness.qual.NonNull;
-import xyz.tehbrian.chattest.commands.ChatTestAllCommand;
-import xyz.tehbrian.chattest.commands.ChatTestColorCommand;
-import xyz.tehbrian.chattest.commands.ChatTestCommand;
-import xyz.tehbrian.chattest.commands.ChatTestReloadCommand;
-import xyz.tehbrian.chattest.user.UserService;
+import xyz.tehbrian.legacychattest.commands.ChatTestAllCommand;
+import xyz.tehbrian.legacychattest.commands.ChatTestColorCommand;
+import xyz.tehbrian.legacychattest.commands.ChatTestCommand;
+import xyz.tehbrian.legacychattest.commands.ChatTestReloadCommand;
+import xyz.tehbrian.legacychattest.user.UserService;
 
 import java.util.Objects;
 
-public final class ChatTest extends TehPlugin {
+public final class LegacyChatTest extends TehPlugin {
 
     private UserService userService;
     private BukkitAudiences bukkitAudiences;

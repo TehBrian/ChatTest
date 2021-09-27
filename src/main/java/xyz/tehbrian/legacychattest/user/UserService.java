@@ -1,4 +1,4 @@
-package xyz.tehbrian.chattest.user;
+package xyz.tehbrian.legacychattest.user;
 
 import dev.tehbrian.tehlib.paper.user.PaperUserService;
 import org.bukkit.command.CommandSender;

@@ -13,7 +13,6 @@ java {
 
 repositories {
     mavenCentral()
-    mavenLocal()
 
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") {
         name = "spigotmc"
@@ -23,6 +22,9 @@ repositories {
     }
     maven("https://s01.oss.sonatype.org/content/groups/public/") {
         name = "sonatype-s01"
+    }
+    maven("https://repo.thbn.me/snapshots/") {
+        name = "thbn-snapshots"
     }
 }
 
@@ -43,6 +45,8 @@ tasks {
     }
 
     shadowJar {
-        archiveBaseName.set("ChatTest")
+        archiveBaseName.set("LegacyChatTest")
+
+        relocate("net.kyori.adventure", "xyz.tehbrian.legacychattest.lib.adventure")
     }
 }

@@ -1,16 +1,16 @@
-package xyz.tehbrian.chattest.commands;
+package xyz.tehbrian.legacychattest.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
-import xyz.tehbrian.chattest.ChatTest;
+import xyz.tehbrian.legacychattest.LegacyChatTest;
 
 public class ChatTestReloadCommand implements CommandExecutor {
 
-    private final ChatTest chatTest;
+    private final LegacyChatTest chatTest;
 
-    public ChatTestReloadCommand(final ChatTest chatTest) {
+    public ChatTestReloadCommand(final LegacyChatTest chatTest) {
         this.chatTest = chatTest;
     }
 
@@ -22,9 +22,7 @@ public class ChatTestReloadCommand implements CommandExecutor {
             final @NotNull String[] args
     ) {
         this.chatTest.reloadConfig();
-        this.chatTest.getBukkitAudiences().sender(sender)
-                .sendMessage(this.chatTest.getMessage("messages.ctr"));
-
+        this.chatTest.getBukkitAudiences().sender(sender).sendMessage(this.chatTest.getMessage("messages.ctr"));
         return true;
     }
 
