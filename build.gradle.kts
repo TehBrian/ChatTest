@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("org.checkerframework") version "0.6.1"
 }
 
 group = "xyz.tehbrian"
@@ -34,7 +35,12 @@ dependencies {
     implementation("net.kyori:adventure-platform-bukkit:4.0.0")
     implementation("net.kyori:adventure-text-serializer-plain:4.9.1")
 
-    implementation("dev.tehbrian:tehlib-paper:0.1.0-SNAPSHOT")
+    implementation("dev.tehbrian:tehlib-paper:0.1.0-SNAPSHOT") {
+        exclude(group = "cloud.commandframework")
+        exclude(group = "org.apache.logging.log4j")
+        exclude(group = "org.spongepowered", module = "configurate-core")
+        exclude(group = "net.kyori", module = "adventure-text-minimessage")
+    }
 }
 
 tasks {
