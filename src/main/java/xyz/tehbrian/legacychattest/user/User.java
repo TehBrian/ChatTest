@@ -16,7 +16,7 @@ public class User extends PaperUser {
         super(uuid);
 
         final @Nullable Player player = this.getPlayer();
-        if ((player != null && player.hasPermission("chattest.ctc"))
+        if ((player != null && player.hasPermission("legacychattest.ctc"))
                 || this.uuid.equals(UserService.CONSOLE)) {
             this.colorEnabled = true;
         }

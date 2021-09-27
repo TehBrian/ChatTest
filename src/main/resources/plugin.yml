@@ -10,30 +10,30 @@ api-version: 1.17
 commands:
   ct:
     description: Send a message to yourself.
-    permission: chattest.ctc
+    permission: legacychattest.ctc
     usage: /<command> <message>
   cta:
     description: Send a message to all players.
-    permission: chattest.cta
+    permission: legacychattest.cta
     usage: /<command> <message>
   ctc:
     description: Toggle personal color code translation.
-    permission: chattest.ctc
+    permission: legacychattest.ctc
     usage: /<command>
   ctr:
     description: Reload the config.
-    permission: chattest.ctr
+    permission: legacychattest.ctr
     usage: /<command>
 permissions:
-  chattest.ct:
+  legacychattest.ct:
     description: Permission to run /ct.
     default: op
-  chattest.cta:
+  legacychattest.cta:
     description: Permission to run /cta.
     default: op
-  chattest.ctc:
+  legacychattest.ctc:
     description: Permission to run /ctc.
     default: op
-  chattest.ctr:
+  legacychattest.ctr:
     description: Permission to run /ctr.
     default: op
