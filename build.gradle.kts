@@ -33,7 +33,7 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT")
 
     implementation("net.kyori:adventure-platform-bukkit:4.1.0")
-    implementation("net.kyori:adventure-text-serializer-plain:4.10.1")
+    implementation("net.kyori:adventure-text-serializer-plain:4.11.0")
 
     implementation("dev.tehbrian:tehlib-paper:0.1.0-SNAPSHOT") {
         exclude(group = "cloud.commandframework")
