@@ -36,6 +36,10 @@ dependencies {
 }
 
 tasks {
+    assemble {
+        dependsOn(shadowJar)
+    }
+
     processResources {
         filesMatching("plugin.yml") {
             expand("version" to project.version, "description" to project.description)
