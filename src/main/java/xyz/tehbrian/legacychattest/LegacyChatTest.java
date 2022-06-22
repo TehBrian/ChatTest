@@ -49,7 +49,7 @@ public final class LegacyChatTest extends TehPlugin {
     }
 
     public @NonNull Component getMessage(final String configKey) {
-        return FormatUtil.legacy(Objects.requireNonNull(getConfig().getString(configKey)));
+        return FormatUtil.legacy(Objects.requireNonNull(this.getConfig().getString(configKey)));
     }
 
 }

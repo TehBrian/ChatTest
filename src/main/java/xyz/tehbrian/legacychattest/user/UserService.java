@@ -17,7 +17,7 @@ public final class UserService extends PaperUserService<User> {
         return this.userMap.computeIfAbsent(uuid, User::new);
     }
 
-    public @NonNull User getUser(final CommandSender sender) {
+    public @NonNull User getUser(final @NonNull CommandSender sender) {
         if (sender instanceof Player player) {
             return this.getUser(player);
         } else {
