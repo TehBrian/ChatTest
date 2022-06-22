@@ -48,7 +48,10 @@ tasks {
 
     shadowJar {
         archiveBaseName.set("LegacyChatTest")
+        archiveClassifier.set("")
 
-        relocate("net.kyori.adventure", "xyz.tehbrian.legacychattest.lib.adventure")
+        val libsPackage = "xyz.tehbrian.legacychattest.libs"
+        relocate("net.kyori.adventure", "$libsPackage.adventure")
+        relocate("dev.tehbrian.tehlib", "$libsPackage.tehlib")
     }
 }
