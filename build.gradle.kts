@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "xyz.tehbrian"
-version = "1.1.0"
+version = "1.1.1"
 description = "Easily test how legacy-formatted messages will look in chat."
 
 java {
