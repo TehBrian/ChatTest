@@ -8,7 +8,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.util.UUID;
 
-public class User extends PaperUser {
+public final class User extends PaperUser {
 
     private boolean colorEnabled = false;
 

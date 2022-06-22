@@ -10,7 +10,7 @@ import xyz.tehbrian.legacychattest.LegacyChatTest;
 import xyz.tehbrian.legacychattest.FormatUtil;
 import xyz.tehbrian.legacychattest.user.User;
 
-public class ChatTestAllCommand implements CommandExecutor {
+public final class ChatTestAllCommand implements CommandExecutor {
 
     private final LegacyChatTest chatTest;
 

@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import xyz.tehbrian.legacychattest.LegacyChatTest;
 import xyz.tehbrian.legacychattest.user.User;
 
-public class ChatTestColorCommand implements CommandExecutor {
+public final class ChatTestColorCommand implements CommandExecutor {
 
     private final LegacyChatTest chatTest;
 

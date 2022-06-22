@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
-public class UserService extends PaperUserService<User> {
+public final class UserService extends PaperUserService<User> {
 
     public static final UUID CONSOLE = new UUID(0, 0);
 

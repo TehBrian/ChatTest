@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import xyz.tehbrian.legacychattest.LegacyChatTest;
 
-public class ChatTestReloadCommand implements CommandExecutor {
+public final class ChatTestReloadCommand implements CommandExecutor {
 
     private final LegacyChatTest chatTest;
 
