@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("com.github.johnrengelman.shadow") version "7.1.2"
-    id("org.checkerframework") version "0.6.13"
+    id("net.kyori.indra.checkstyle") version "2.1.1"
 }
 
 group = "xyz.tehbrian"
