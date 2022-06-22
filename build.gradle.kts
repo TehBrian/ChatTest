@@ -14,30 +14,22 @@ java {
 
 repositories {
     mavenCentral()
-
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") {
         name = "spigotmc"
     }
-    maven("https://oss.sonatype.org/content/groups/public/") {
-        name = "sonatype"
-    }
-    maven("https://s01.oss.sonatype.org/content/groups/public/") {
-        name = "sonatype-s01"
-    }
-    maven("https://repo.thbn.me/snapshots/") {
-        name = "thbn-snapshots"
+    maven("https://repo.thbn.me/releases/") {
+        name = "thbn"
     }
 }
 
 dependencies {
-    compileOnly("org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
 
     implementation("net.kyori:adventure-platform-bukkit:4.1.1")
     implementation("net.kyori:adventure-text-serializer-plain:4.11.0")
 
-    implementation("dev.tehbrian:tehlib-paper:0.1.0-SNAPSHOT") {
+    implementation("dev.tehbrian:tehlib-paper:0.3.1") {
         exclude(group = "cloud.commandframework")
-        exclude(group = "org.apache.logging.log4j")
         exclude(group = "org.spongepowered", module = "configurate-core")
         exclude(group = "net.kyori", module = "adventure-text-minimessage")
     }
