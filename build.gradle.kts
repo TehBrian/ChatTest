@@ -25,7 +25,7 @@ repositories {
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
 
-    implementation("net.kyori:adventure-platform-bukkit:4.1.1")
+    implementation("net.kyori:adventure-platform-bukkit:4.1.2")
     implementation("net.kyori:adventure-text-serializer-plain:4.11.0")
 
     implementation("dev.tehbrian:tehlib-paper:0.3.1") {
